@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(163, 201, 247, 0.8), rgba(255, 255, 255, 1));
+        }
+
+        .hero-content {
+            z-index: 1;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 2s ease-in-out; /* Smooth transition for fade-in effect */
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 45px;
+            background: linear-gradient(135deg, #2980b9, #8e44ad);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 35px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            transform: translateY(-5px);
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 800px;
+        }
+
+        .info-section h2 {
+            font-size: 2.5rem;
+            color: #2980b9;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 1.25rem;
+            color: #7f8c8d;
+        }
+
+        .services-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 50px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+       .service-box {
+    background: linear-gradient(135deg, #e3f3ff, #f8f3ff);
+    color: #2980b9;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 2s ease-in-out;
+    height: 200px;
+    max-width: 500px;
+    opacity: 0; /* Initially hidden */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+        .service-box.visible {
+            opacity: 1; /* Make visible when class is added */
+        }
+
+        /* Add a slight delay to each box for staggered fade-in effect */
+        .service-box:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        .service-box:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+        .service-box:nth-child(3) {
+            transition-delay: 0.1s;
+        }
+        .service-box:nth-child(4) {
+            transition-delay: 0.1s;
+        }
+
+        .service-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), #2980b9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            .services-section {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .service-box {
+                max-width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .services-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Unlock Your Career Potential</h1>
+            <p>We optimize resumes, enhance LinkedIn profiles, and handle job applications so you can focus on what truly matters — your next big opportunity.</p>
+            <a href="#services" class="cta-btn">Learn More</a>
+        </div>
+    </div>
+
+    <section class="info-section" id="services">
+        <h2>Why Choose Us?</h2>
+        <p>At Career Hub, we provide tailored services to help you stand out in the competitive job market. From perfecting your resume to boosting your LinkedIn profile, we’re here to make your job application process smoother and more effective.</p><br>
+        <a href="/services" class="cta-btn">Discover Our Services</a>
+    </section>
+
+    <section class="info-section">
+        <h2>Services Offered</h2>
+        <div class="services-section">
+            <div class="service-box"> 
+                <h3>Resume Optimization</h3>
+            </div>
+            <div class="service-box">
+                <h3>LinkedIn Profile Enhancement</h3>
+            </div>
+            <div class="service-box">
+                <h3>Cover Letter Drafting</h3>
+            </div>
+            <div class="service-box">
+                <h3>Job Application Management</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Career Hub | <a href="/about-us">About Us</a> | <a href="/contact-us">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // Smooth Scroll for "Learn More" Button
+        document.querySelector('.cta-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('#services').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate Hero Section on Page Load
+        window.addEventListener('load', function () {
+            const heroText = document.querySelector('.hero-content');
+            heroText.style.transition = "opacity 2s ease-in-out"; // Ensure transition effect is added after load
+            heroText.style.opacity = "1"; // Fade in text
+
+            // Fade-in effect for service boxes
+            const serviceBoxes = document.querySelectorAll('.service-box');
+            serviceBoxes.forEach((box, index) => {
+                setTimeout(() => {
+                    box.classList.add('visible'); // Add 'visible' class to trigger fade-in
+                }, 1000); // Start the fade-in effect after 1 second delay
+            });
+        });
+
+        // Dynamic Copyright Year in Footer
+        const yearSpan = document.createElement('span');
+        yearSpan.textContent = new Date().getFullYear();
+        const footer = document.querySelector('footer p');
+        footer.innerHTML = `&copy; ${yearSpan.textContent} Career Hub | <a href="/about-us">About Us</a> | <a href="/contact-us">Contact Us</a>`;
+    </script>
+</body>
+</html>
